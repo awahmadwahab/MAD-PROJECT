@@ -1,0 +1,21 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Demo mode: allow read/write for core lookup collections
+    match /students/{itemId} { allow read, write: if true; }
+    match /teachers/{itemId} { allow read, write: if true; }
+    match /courses/{itemId} { allow read, write: if true; }
+
+    // Sessions: anyone can verify active sessions, but only authenticated teachers can create/end them
+    match /sessions/{sessionId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    // Attendance records: anyone can read/write (since students are not authenticated via FirebaseAuth in this flow)
+    match /attendance_records/{recordId} {
+      allow read, write: if true;
+    }
+  }
+}
