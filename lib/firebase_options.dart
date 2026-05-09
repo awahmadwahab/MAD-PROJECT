@@ -25,7 +25,7 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAPbJqgjWIYFqUY6FK18uMOgP1KucVHtMA',
+    apiKey: const String.fromEnvironment('FIREBASE_API_KEY_WEB'),
     appId: '1:528435356261:web:03f476710078c8ba515c8c',
     messagingSenderId: '528435356261',
     projectId: 'campuscan-e5678',
@@ -35,7 +35,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC15p08CHtJIERL0GnnfSZvN0jj06Rc3qY',
+    apiKey: const String.fromEnvironment('FIREBASE_API_KEY_ANDROID'),
     appId: '1:528435356261:android:1155a9f819c02ff9515c8c',
     messagingSenderId: '528435356261',
     projectId: 'campuscan-e5678',
@@ -43,7 +43,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC3bTjMMprj99nw5VAIuVvKBi0HP_o1g4A',
+    apiKey: const String.fromEnvironment('FIREBASE_API_KEY_IOS'),
     appId: '1:528435356261:ios:4d2256e3e984cc15515c8c',
     messagingSenderId: '528435356261',
     projectId: 'campuscan-e5678',
@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
   // FlutterFire uses the Apple app registration for macOS when the bundle ID
   // matches the Apple app registered in Firebase.
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyC3bTjMMprj99nw5VAIuVvKBi0HP_o1g4A',
+    apiKey: const String.fromEnvironment('FIREBASE_API_KEY_MACOS'),
     appId: '1:528435356261:ios:4d2256e3e984cc15515c8c',
     messagingSenderId: '528435356261',
     projectId: 'campuscan-e5678',
